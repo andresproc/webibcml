@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<title> {% block title %}::Formulario::{% endblock %}</title>
+
+{% block content %}
+
+<div class="container p-5 my-4 border">
+    <div class="card">
+        
+        <h5 class="card-header"><i class="ion-ios-people"></i>  Recolección de Datos</h5>
+      
+      </div>
+   
+
+      <div class="card flex-row flex-wrap">
+        <div class="card-header border-0">
+            <img src="{% static "img/KL.png" %}" alt="">
+        </div>
+        <div class="card-block px-2">
+            <h4 class="card-title"> Datos de tu formación profesional</h4>
+            <p class="card-text">Para realizar un analisis descriptivo y predictivo de los salarios de los profesionales en colombia <br>complementamos la información del Ministerio de Educación Nacional con esta Pequeña Encuesta</p>
+<br>
+
+            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
+                <i class="ion-flag"></i> Inicia Encuesta
+              </button>
+        </div>
+        <div class="w-100"></div>
+        <div class="card-footer w-100 text-muted">
+            La información recolectada es con fines academicos
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Preguntas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         
+            <form method="POST" action="/Form/?id=1">
+              {% csrf_token %}
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">INSTITUCIÓN DE EDUCACIÓN SUPERIOR </label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre Universidad" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">NIVEL ACADÉMICO</label>
+                  <select class="form-control" id="exampleFormControlSelect1" required>
+                    <option>...</option>
+                    <option>Técnica</option>
+                    <option>Tecnológica</option>
+                    <option>Universitaria</option>
+                    <option>Especialización</option>
+                    <option>Maestria</option>
+                    <option>Doctorado</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput2">PROGRAMA ACADÉMICO</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Nombre Carrera" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Año de Grado</label>
+                  <input type="number" class="form-control" id="exampleInputgrado1" placeholder="Año Grado">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="exampleFormControlInput2">Genero</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                  <label class="form-check-label" for="exampleRadios1">
+                    Femenino
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Masculino
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                  <label class="form-check-label" for="exampleRadios3">
+                    Comunidad LGBT
+                  </label>
+                </div>
+               </div>
+
+               <div class="form-group">
+                <label for="exampleInputPassword1">Edad</label>
+                <input type="date" class="form-control" id="date" >
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect3">Ingresos</label>
+                <select class="form-control" id="exampleFormControlSelect3" required>
+                  <option>...</option>
+                  <option>1 SMMLV </option>
+                  <option>Entre 1 y 1,5 SMMLV </option>
+                  <option>Entre 1,5 y 2 SMMLV </option>
+                  <option>Entre 2 y 2 ,5 SMMLV </option>
+                  <option>Entre 2,5 y 3 SMMLV </option>
+                  <option>Entre 3 y 3,5 SMMLV </option>
+                  <option>Entre 3,5 y 4 SMMLV </option>
+                  <option>Entre 4 y 4,5 SMMLV </option>
+                  <option>Entre 4,5 y 5 SMMLV </option>
+                  <option>Entre 5 y 6 SMMLV </option>
+                  <option>Entre 6 y 7 SMMLV </option>
+                  <option>Entre 7 y 8 SMMLV </option>
+                  <option>Entre 8 y 9 SMMLV </option>
+                  <option>Entre 9 y 11 SMMLV </option>
+                  <option>Entre 11 y 13 SMMLV </option>
+                  <option>Entre 13 y 15 SMMLV </option>
+                  <option>MAS 15 SMMLV </option>                 
+                </select>
+              </div>
+              
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"> <i class="ion-trash-b"></i> Cerrar</button>
+          <button type="submit" class="btn btn-primary" > <i class="ion-ios-download-outline"></i> Guardar</button>
+          
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+		window.onload=function() {
+
+      var myParam = location.search.split('id=')[1]
+
+      if (myParam == 1) {
+        Swal.fire({
+    "title": "Felicidades",
+    "text": "Información guardada con exito",
+    "icon": "success",
+})
+}
+	
+		}
+		</script>
+  
+
+
+  {% endblock %}

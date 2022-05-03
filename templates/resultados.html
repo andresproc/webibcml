@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<title> {% block title %}::Resultados::{% endblock %}</title>
+
+{% block content %}
+
+<div class="container p-5 my-4 border">
+    <div class="card">
+        
+        <h5 class="card-header"><i class="ion-ios-people"></i> Resultados</h5>
+      
+      </div>
+   
+      <iframe title="Tablero Proyecto IBC - Dashboard" width="1000" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiNzc4NjNmZmMtNmIwNi00ZjVhLTk0MGQtNDMxNzViMTQ0YjVlIiwidCI6IjI5OWEyODgxLTEzODAtNDAyMC1iNDJmLTcxNWEzNWUxYmNhZiIsImMiOjR9&pageName=ReportSection51175a20a1068eb169a7" frameborder="0" allowFullScreen="true"></iframe>
+     
+
+</div>
+
+
+  
+
+  {% endblock %}

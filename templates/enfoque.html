@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<title> {% block title %}::Enfoque::{% endblock %}</title>
+
+{% block content %}
+
+<div class="container p-5 my-4 border">
+    <div class="card">
+        
+        <h5 class="card-header"><i class="ion-ios-people"></i> Documentos relacionados con la investigación</h5>
+      
+      </div>
+   
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Presentación</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Documento</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Profiling</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#edt" role="tab" aria-controls="edt" aria-selected="false">EDT</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQhV7Q4XgUoSUhqYlbIcDYLcE8mOB0b9o9-LuqyJI1nb9ZxNqXme4D24qH2pgww4A/embed?start=true&loop=false&delayms=3000" frameborder="0" width="1000" height="700"></iframe>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <iframe height="1000" width="800" src="https://docs.google.com/document/d/e/2PACX-1vRGlOwNplqgsX4tFPBYt338QZiDx_nHQUkMePgFCrgpdlW_7Ih8cDbbtFdwxr8N6Q/pub?embedded=true"></iframe>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <iframe title="Tablero Proyecto IBC - Dashboard" width="1000" height="800" src="{% static 'img/HistoricoGraduados.html' %}" frameborder="0" allowFullScreen="true"></iframe>
+
+        </div>
+        <div class="tab-pane fade" id="edt" role="tabpanel" aria-labelledby="edt-tab">
+          
+          <p><img src="{% static 'img/EDT GRADUADOS.png' %}" class="img-circle" height="800" width="800"></p>
+         
+        </div>
+      </div>
+
+
+
+
+</div>
+
+  {% endblock %}
